@@ -1,5 +1,5 @@
-from asyncore import loop
-
-
 name = input("Enter your name: ")
-print("Hello " + name + "!")
+if name == "Robin":
+    print("Hello King " + name + "!")
+else:
+    print("Hello " + name + "!")
