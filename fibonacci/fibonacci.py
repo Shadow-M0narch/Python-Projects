@@ -1,9 +1,17 @@
-fibonacci_cache = {0: 0, 1: 1}
+from functools import cache
+from tracemalloc import start
+import time
 
-def fibonacci_of(n):
-    if n in fibonacci_cache:
-        return fibonacci_cache[n]
-    fibonacci_cache[n] = fibonacci_of(n - 1) + fibonacci_of(n - 2)
-    return fibonacci_cache[n]
+@cache
+def fibonacci(n):
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
-print([fibonacci_of(n) for n in range(15)])
+start = time.time()
+for n in range(1, 101):
+    print(n, ";", fibonacci(n))
+end = time.time()
+
+print(end-start)
