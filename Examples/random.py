@@ -1,6 +1,3 @@
-from tkinter.messagebox import YES
-
-
 male = ["male", "boy", "man"]
 female = ["female", "girl", "woman"]
 stupid_loop_answers = ["yes", "no"]
@@ -17,17 +14,8 @@ def user_gender():
         return user_gender()
     elif gender == "no":
         print("Yes.")
-        return stupid_loop()
+        return user_gender()
     else:
         print("ERROR 404: Gender does not exist")
         return user_gender()
-
-def stupid_loop(sla):
-    input()
-    if sla in stupid_loop_answers:
-
-
-
-    
-
 user_gender()
