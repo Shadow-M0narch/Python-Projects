@@ -37,11 +37,14 @@ class MyApp:
         #Configure Method
         # label.configure(text="Hello Everyone.", font=("Courier", 20))
 
+        entry_text2 = StringVar()
         self.entry_text = StringVar()
         entry = Entry(root, textvariable=self.entry_text)
         self.label_text = StringVar()
         label2 = Label(root, textvariable=self.label_text)
+        label3 = Label(root, textvariable=entry_text2)
 
+        label3.pack()
         label2.pack()
         entry.pack()
 
